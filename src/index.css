@@ -1,0 +1,628 @@
+/*===================
+   Table of contents
+   1. Global
+   2. Header
+   3. Main
+   4. Filter Div
+      4.1. Button
+      4.2. Modal
+         4.2.1 Common Styles
+         4.2.2 Container
+         4.2.3 Titles
+         4.2.4 Chips
+         4.2.5 Week-days and Categories
+         4.2.6 Values
+         4.2.7 Buttons
+   5. Table
+      5.1. Head
+      5.2. Body
+      5.3 Icons
+      5.4 Delete Modal
+   6. Resume
+      6.1. Container
+      6.2. Text
+      6.3. In, Out, Balance Div
+      6.4. Button
+   7. Modal
+      7.1. Container and Background
+      7.2. Text Elements
+      7.3. Buttons
+      7.4. Input and Label
+=====================*/
+
+/*==================
+      1. Global
+==================*/
+
+* {
+   margin: 0;
+   padding: 0;
+
+   box-sizing: border-box;
+
+   --main-box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+}
+
+button {
+   all: unset;
+   cursor: pointer;
+}
+
+img {
+   cursor: pointer;
+}
+
+body {
+   background: linear-gradient(90.23deg, #05ede3 0.02%, #645ffb 99.63%);
+}
+
+/*==================
+      2. Header
+==================*/
+
+.container-header {
+   padding: 42px 100px;
+
+   background: linear-gradient(90.23deg, #05ede3 0.02%, #645ffb 99.63%);
+   width: 100%;
+
+   display: flex;
+   gap: 8px;
+}
+
+.container-header img {
+   width: 45px;
+   height: 45px;
+}
+
+.container-header h1 {
+   align-self: center;
+
+   font-family: "Rubik", sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 36px;
+   color: white;
+}
+
+/*==================
+      3. Main
+==================*/
+
+.main-ctn {
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+
+   border-top-left-radius: 60px;
+   border-top-right-radius: 60px;
+
+   background-color: white;
+   min-height: 100vh;
+}
+
+/*==================
+      4. Filter Div
+==================*/
+
+/*----4.1. Button------*/
+
+.open-filters-button {
+   padding: 8px 14px;
+   margin: 55px 0 26px 0;
+
+   border-radius: 10px;
+   box-shadow: var(--main-box-shadow);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 4px;
+}
+
+.open-filters-button span {
+   font-family: Lato, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 12px;
+}
+
+/*----4.2. Modal------*/
+
+/*----4.2.1 Common Styles------*/
+.container-filters,
+.container-chip {
+   border-radius: 10px;
+}
+
+.container-filters,
+.container-chip,
+.day-options,
+.category-options {
+   display: flex;
+}
+
+.filter-title,
+.container-chip,
+.value-label {
+   font-family: Rubik, sans-serif;
+   font-style: normal;
+}
+
+/*----4.2.2 Container------*/
+
+.container-filters {
+   background-color: #fafafa;
+
+   width: 959px;
+   height: 240px;
+
+   justify-content: space-around;
+
+   padding: 27px 0;
+   margin-bottom: 53px;
+}
+
+/*----4.2.3 Titles------*/
+
+.filter-title {
+   font-weight: 500;
+   font-size: 12px;
+
+   color: #b9b9b9;
+
+   margin-bottom: 20px;
+}
+
+.day-filter,
+.category-filter {
+   width: 172px;
+}
+
+/*----4.2.4 Chips------*/
+
+.container-chip {
+   background-color: white;
+   box-shadow: var(--main-box-shadow);
+
+   font-weight: normal;
+   font-size: 10px;
+
+   padding: 4px 10px;
+   margin: 0 12px 9px 0;
+
+   width: 80px;
+   height: 20px;
+
+   justify-content: space-between;
+   align-items: center;
+}
+
+/*----4.2.5 Week-days and Categories------*/
+
+.day-options,
+.category-options {
+   border-right: 1px solid #eaeaea;
+
+   max-height: 150px;
+   width: 240px;
+
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.category-options {
+   overflow: auto;
+}
+
+/*----4.2.6 Values------*/
+
+.value-filter {
+   width: 65px;
+}
+
+.value-label {
+   all: unset;
+
+   font-weight: normal;
+   font-size: 9px;
+
+   color: #484848;
+}
+
+.value-options {
+   all: unset;
+
+   padding: 0 5px;
+
+   width: 65px;
+   height: 22px;
+
+   background: #ffffff;
+   border: 1px solid #7b61ff;
+   box-sizing: border-box;
+   border-radius: 2px;
+
+   font-size: 10px;
+}
+
+/*----4.2.7 Buttons------*/
+
+.btn-clear-filters,
+.btn-apply-filters {
+   box-shadow: var(--main-box-shadow);
+   border-radius: 10px;
+
+   padding: 8px 10px;
+
+   font-family: Lato, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 12px;
+}
+
+.btn-clear-filters {
+   background: #fafafa;
+
+   margin-right: 12px;
+
+   color: black;
+}
+
+.btn-apply-filters {
+   background: linear-gradient(264.83deg, #3a9ff1 -3.28%, #05ede3 100%);
+
+   color: white;
+}
+
+/*==================
+      5. Table
+==================*/
+
+/*----5.1 Common Styles------*/
+.table-head,
+.table-line {
+   font-family: Lato, sans-serif;
+   font-style: normal;
+   font-size: 14px;
+   line-height: 17px;
+
+   display: grid;
+   align-items: center;
+}
+
+/*----5.2. Head------*/
+
+.table-head {
+   width: 965px;
+   height: 58px;
+
+   grid-template-columns: 150px 210px 200px 150px 140px 122px;
+
+   padding: 0 35px;
+
+   background-color: #fafafa;
+   box-shadow: var(--main-box-shadow);
+
+   font-weight: bold;
+}
+
+.column-title {
+   display: flex;
+   align-items: center;
+
+   gap: 5px;
+}
+
+#date {
+   margin-left: 15px;
+}
+
+/*----5.3. Body------*/
+
+.table-line {
+   height: 69px;
+   padding: 0 35px;
+
+   grid-template-columns: 100px 180px 225px 170px 100px 150px;
+
+   text-align: center;
+
+   border-bottom: 1px solid rgba(224, 224, 224, 1);
+
+   font-weight: normal;
+
+   max-width: 964px;
+}
+
+/*----5.4. Icons------*/
+
+.edit-delete-icon {
+   position: relative;
+}
+
+.edit-icon {
+   margin-right: 13px;
+}
+
+/*----5.5. Delete Modal------*/
+
+.container-confirm-delete {
+   background-color: rgba(228, 242, 253, 1);
+   border-radius: 4px;
+
+   font-family: Rubik, sans-serif;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 10px;
+
+   width: 111px;
+   padding: 8px 0;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   position: absolute;
+   top: 30px;
+   left: 70px;
+   z-index: 1;
+}
+
+.container-confirm-delete::before {
+   content: "";
+   width: 0px;
+   height: 0px;
+   position: absolute;
+   border-left: 5px solid rgba(228, 242, 253, 1);
+   border-right: 5px solid transparent;
+   border-top: 5px solid rgba(228, 242, 253, 1);
+   border-bottom: 5px solid transparent;
+   right: 82px;
+   top: -5px;
+   transform: rotate(45deg);
+}
+
+.btn-actions-confirm-delete {
+   display: flex;
+   justify-content: center;
+   gap: 7px;
+}
+
+.yes-btn,
+.no-btn {
+   border-radius: 4px;
+
+   width: 37px;
+   height: 15px;
+
+   margin-top: 4px;
+
+   text-align: center;
+
+   font-weight: 500;
+   font-size: 9px;
+
+   color: white;
+}
+
+.yes-btn {
+   background-color: #3a9ff1;
+}
+
+.no-btn {
+   background-color: #ff576b;
+}
+
+/*==================
+      6. Resume
+==================*/
+
+/*----6.1. Container------*/
+
+.container-resume {
+   background-color: #fafafa;
+   box-shadow: var(--main-box-shadow);
+   border-radius: 10px;
+
+   padding: 26px 0 31px 0;
+
+   width: 240px;
+
+   margin-top: 115px;
+}
+
+/*----6.2. Text------*/
+
+.container-resume h2,
+.container-resume span {
+   font-family: Rubik, sans-serif;
+   font-style: normal;
+   color: #2f2f2f;
+}
+
+.container-resume h2 {
+   font-weight: bold;
+   font-size: 18px;
+
+   margin: 0 0 23px 25px;
+}
+
+.container-resume span {
+   font-weight: 500;
+   font-size: 13px;
+
+   margin: 0 25px 10px 25px;
+}
+
+.resume-balance span {
+   margin: 0;
+}
+
+/*----6.3. In, Out, Balance Div------*/
+
+.resume-in,
+.resume-out {
+   display: flex;
+   justify-content: space-between;
+}
+
+.resume-balance {
+   border-top: 1px solid rgba(234, 234, 234, 1);
+
+   padding-top: 16px;
+   margin: 0 25px 0 25px;
+
+   display: flex;
+   justify-content: space-between;
+}
+
+/*----6.4. Button------*/
+
+.btn-add {
+   width: 240px;
+
+   background: linear-gradient(91.26deg, #fa8c10 0%, #ff57d3 97.77%);
+   border-radius: 5px;
+
+   text-align: center;
+
+   padding: 12px 0;
+   margin-top: 16px;
+
+   font-family: Rubik, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 14px;
+   color: white;
+}
+
+/*==================
+      7. Modal
+==================*/
+
+/*----7.1. Container and Background------*/
+
+.modal {
+   background-color: rgba(0, 0, 0, 0.7);
+
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal-container {
+   background-color: white;
+   border-radius: 20px;
+
+   width: 611px;
+   padding: 51px 0 46px 0;
+}
+
+/*----7.2. Text Elements------*/
+
+.title-close {
+   display: flex;
+   justify-content: space-between;
+
+   margin: 0 64px 52px 64px;
+}
+
+.modal-container h1,
+.credit-debit-btn,
+.btn-insert {
+   font-family: Rubik, sans-serif;
+   font-style: normal;
+   font-weight: bold;
+}
+
+.modal-container h1 {
+   font-size: 30px;
+}
+
+/*----7.3. Buttons------*/
+
+.credit-debit-btn {
+   font-size: 14px;
+   color: white;
+
+   width: 488px;
+
+   margin: 0 auto 42px auto;
+}
+
+.credit-button,
+.debit-button {
+   width: 244px;
+   height: 56px;
+
+   text-align: center;
+}
+
+.credit-button {
+   border-bottom-left-radius: 10px;
+   border-top-left-radius: 10px;
+}
+
+.debit-button {
+   border-bottom-right-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.btn-insert {
+   width: 236px;
+   height: 38px;
+
+   text-align: center;
+
+   background-color: #645ffb;
+   border-radius: 5px;
+
+   font-size: 14px;
+   color: white;
+}
+
+.submit {
+   width: 236px;
+   margin: 43px auto 0;
+}
+
+/*----7.4. Input and Label------*/
+
+input,
+label {
+   font-family: Rubik;
+   font-style: normal;
+   font-weight: normal;
+}
+
+label {
+   display: block;
+   margin: 0 0 9px 64px;
+
+   font-weight: 500;
+   font-size: 20px;
+   color: #484848;
+}
+
+input {
+   all: unset;
+   box-sizing: border-box;
+
+   margin: 0 0 26px 64px;
+   padding: 0 20px;
+   width: 485px;
+   height: 50px;
+
+   border: 1px solid #555555;
+   border-radius: 5px;
+
+   font-weight: 300;
+   font-size: 20px;
+}
