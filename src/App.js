@@ -18,7 +18,6 @@ import { TransactionContext } from "./Contexts/TransactionContext";
 function App() {
    const [transactions, setTransactions] = useState([]);
    const [isModalOpen, setIsModalOpen] = useState(false);
-   const [deleteModal, setDeleteModal] = useState(false);
    const [editTransaction, setEditTransaction] = useState(false);
    const [column, setColumn] = useState("date");
    const [orderAsc, setOrderAsc] = useState(true);
@@ -88,15 +87,19 @@ function App() {
 
       const data = { ...form, date: date, week_day: days[date.getDay()] };
 
-      const response = await fetch("http://localhost:3333/transactions", {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify(data),
-      });
+      try {
+         const response = await fetch("http://localhost:3333/transactions", {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+         });
 
-      await response.json();
+         await response.json();
+      } catch (error) {
+         console.log(error);
+      }
 
       setForm({
          ...formInitialState,
@@ -125,18 +128,22 @@ function App() {
 
       const data = { ...form, date: date, week_day: days[date.getDay()] };
 
-      const response = await fetch(
-         `http://localhost:3333/transactions/${editTransaction.id}`,
-         {
-            method: "PUT",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-         }
-      );
+      try {
+         const response = await fetch(
+            `http://localhost:3333/transactions/${editTransaction.id}`,
+            {
+               method: "PUT",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify(data),
+            }
+         );
 
-      await response.json();
+         await response.json();
+      } catch (error) {
+         console.log(error);
+      }
 
       setForm({
          ...formInitialState,
@@ -177,8 +184,6 @@ function App() {
                   <div className="table-body">
                      <LogContext.Provider
                         value={{
-                           deleteModal,
-                           setDeleteModal,
                            handleDelete,
                            setEditTransaction,
                         }}>

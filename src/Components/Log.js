@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LogContext } from "../Contexts/LogContext";
 
 export default function Log(props) {
-   const { deleteModal, setDeleteModal, handleDelete, setEditTransaction } =
-      useContext(LogContext);
+   const { handleDelete, setEditTransaction } = useContext(LogContext);
+
+   const [deleteModal, setDeleteModal] = useState(false);
 
    const date = new Date(props.t.date);
 
@@ -43,12 +44,12 @@ export default function Log(props) {
                   src="/assets/excluir.svg"
                   alt="Excluir registro."
                   className="delete-icon"
-                  onClick={() => setDeleteModal(props.t.id)}
+                  onClick={() => setDeleteModal(true)}
                />
             </button>
 
-            {deleteModal === props.t.id && (
-               <div className="container-confirm-delete" id={props.t.id}>
+            {deleteModal && (
+               <div className="container-confirm-delete">
                   <p>Apagar item?</p>
                   <div className="btn-actions-confirm-delete">
                      <button
