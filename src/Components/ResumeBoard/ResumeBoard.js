@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ResumeContext } from "../Contexts/ResumeContext";
+import { ResumeContext } from "../../Contexts/ResumeContext";
 
 export default function ResumeBoard() {
    const { transactions, form, setForm, setIsModalOpen } = useContext(ResumeContext);

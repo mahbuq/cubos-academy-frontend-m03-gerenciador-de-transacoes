@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 
 /* Components */
-import ColumnHeader from "./Components/ColumnHeader";
-import FilterOptions from "./Components/FilterOptions";
-import Log from "./Components/Log";
-import ResumeBoard from "./Components/ResumeBoard";
-import TransactionModal from "./Components/TransactionModal";
+import ColumnHeader from "./Components/ColumnHeader/ColumnHeader";
+import FilterOptions from "./Components/FilterOptions/FilterOptions";
+import Log from "./Components/Log/Log";
+import ResumeBoard from "./Components/ResumeBoard/ResumeBoard";
+import TransactionModal from "./Components/TransactionModal/TransactionModal";
 
 /* Contexts */
 import { ColumnContext } from "./Contexts/ColumnContext";

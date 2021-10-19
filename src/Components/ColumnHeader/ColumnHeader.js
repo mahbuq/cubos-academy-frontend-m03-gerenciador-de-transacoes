@@ -1,4 +1,4 @@
-import ColumnButton from "./ColumnButton";
+import ColumnButton from "./ColumnButton/ColumnButton";
 
 export default function ColumnHeader() {
    return (

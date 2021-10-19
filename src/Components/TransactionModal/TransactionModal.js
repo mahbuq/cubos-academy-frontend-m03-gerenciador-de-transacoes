@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { TransactionContext } from "../Contexts/TransactionContext";
+import { TransactionContext } from "../../Contexts/TransactionContext";
 import InputMask from "react-input-mask";
 
 export default function TransactionModal() {

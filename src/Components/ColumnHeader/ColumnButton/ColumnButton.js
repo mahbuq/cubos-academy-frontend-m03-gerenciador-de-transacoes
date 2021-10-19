@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ColumnContext } from "../Contexts/ColumnContext";
+import { ColumnContext } from "../../../Contexts/ColumnContext";
 
 export default function ColumnButton(props) {
    const { id, children } = props;

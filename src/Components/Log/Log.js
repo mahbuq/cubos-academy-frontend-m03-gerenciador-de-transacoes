@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { LogContext } from "../Contexts/LogContext";
+import { LogContext } from "../../Contexts/LogContext";
 
 export default function Log(props) {
    const { handleDelete, setEditTransaction } = useContext(LogContext);

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { FiltersContext } from "../Contexts/FiltersContext";
-import Chip from "./Chip";
+import { FiltersContext } from "../../Contexts/FiltersContext";
+import Chip from "./Chip/Chip";
 
 export default function FilterOptions() {
    const { transactions, checked, setChecked, setFiltered } = useContext(FiltersContext);

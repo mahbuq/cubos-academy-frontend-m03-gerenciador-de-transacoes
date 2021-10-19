@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FiltersContext } from "../Contexts/FiltersContext";
+import { FiltersContext } from "../../../Contexts/FiltersContext";
 
 export default function Chip(props) {
    const { checked, setChecked } = useContext(FiltersContext);
